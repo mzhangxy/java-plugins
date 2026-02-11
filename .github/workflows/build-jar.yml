@@ -50,13 +50,6 @@ jobs:
           tag_name: latest
           name: Latest Build
           body: |
-            # EssentialsX Latest Build
-            
-            ## Build Information
-            - Commit: ${{ steps.commit.outputs.sha_short }}
-            - Built on: ${{ github.event.created_at }}
-            - Triggered by: ${{ github.event_name }}
-            
             ## Download
             Download the JAR file below and place it in your server's `plugins` folder.
             
